@@ -1,9 +1,10 @@
-# 🧭 Python OOP for Beginners — 10-Week Course Outline
+# 🧭 Python OOP - 10-Week Course Outline
 
 **Duration:** 10 weeks × 3–4 hours/week  
 **Prerequisites:**  
 - Basic Python (variables, loops, functions, conditionals)  
 - No prior OOP experience needed  
+- Development environment: VS Code, Git + Github
 
 **Course Goals:**  
 By the end of this course, students will be able to:
@@ -137,24 +138,11 @@ By the end of this course, students will be able to:
 
 ---
 
-## 🧩 Optional Extensions
-- Git and version control basics  
+## 🧩 Extensions
+- Git and version control basics
+- Copilot  
 - Data persistence with SQLite  
 - Advanced design patterns (Observer, Strategy)  
-- GUI development using Tkinter or PyQt  
+  
 
----
 
-**Weekly Time Commitment:**  
-3–4 hours per week  
-- 1 hour lecture/concept discussion  
-- 1 hour guided coding lab  
-- 1–2 hours project or homework  
-
----
-
-**Instructor Tips:**  
-- Focus on one major concept per week.  
-- Encourage students to extend previous mini-projects instead of starting from scratch.  
-- Reinforce design thinking: *Plan → Code → Refactor → Test → Document*.
-- 

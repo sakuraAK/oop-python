@@ -11,8 +11,6 @@ Topics covered this week:
 - JSON serialization (save) and deserialization (load)
 - Basic file I/O (read/write/append)
 
-Below are **practical, non-game exercises** for classroom use.
-
 ---
 
 ## **📌 Exercise 1 — Managing Many Objects in a List**

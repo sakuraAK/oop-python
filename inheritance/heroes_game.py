@@ -51,13 +51,17 @@ class Mage(Character):
 
     def __init__(self, name, health):
         super().__init__(name, health)
-        self.__mana = random.randint(3, 10)
+        self.__mana = random.randint(10, 100)
     
-    def cast_spell(self, other: Character):
+    def cast_spell(self, other: Character, spell_book=None):
         if self.__mana < 5:
              print(f"{self.name} tried to cast a spell on {other.name} but has not enough mana")
         else:
-            print(f"{self.name} casts a spell on {other.name}")
+            current_spell = ""
+            if not spell_book == None:
+                current_spell = spell_book.use()
+                
+            print(f"{self.name} casts a {current_spell} spell on {other.name}")
             other.take_damage(7)
             self.__mana -= 5
     
@@ -84,18 +88,18 @@ Implement fight loop between warrior and mage
 
 
 
+if __name__ == "__main__":
+    warrior = Warrior("Brut", 10)
+    mage = Mage("Misterio", 7)
 
-warrior = Warrior("Brut", 10)
-mage = Mage("Misterio", 7)
+    while warrior.is_alive() and mage.is_alive():
+        mage.attack(warrior)
+        if not warrior.is_alive():
+            break
+        warrior.attack(mage)
 
-while warrior.is_alive() and mage.is_alive():
-    mage.attack(warrior)
-    if not warrior.is_alive():
-        break
-    warrior.attack(mage)
-
-if warrior.is_alive():
-    print("Warrior won")
-else:
-    print("Mage has won")
+    if warrior.is_alive():
+        print("Warrior won")
+    else:
+        print("Mage has won")
 

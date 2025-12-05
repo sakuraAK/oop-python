@@ -2,23 +2,27 @@
 Implement shapes (Rectangle, Square)
 
 """
+from abc import ABC, abstractmethod
 
-class Shape:
+class Shape(ABC):
     
     def __init__(self, color):
         self.__color = color
     
+    @abstractmethod
     def area(self):
-        raise NotImplementedError("Child class needs to implement this!")
+        pass
     
+    @abstractmethod
     def perimiter(self):
-         raise NotImplementedError("Child class needs to implement this!")
+        pass
     
     def __str__(self):
         return f"{self.__class__.__name__} of color {self.__color}"
     
+    @abstractmethod
     def draw(self):
-        raise NotImplementedError("Child class needs to implement this!")
+        pass
     
 
 class Rectangle(Shape):
@@ -46,6 +50,6 @@ class  Square(Rectangle):
 
 
 
-sq = Square("blue", 10)
+rectangle = Rectangle("red", 10, 15)
 
-print(sq)
+

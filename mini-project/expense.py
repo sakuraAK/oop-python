@@ -5,7 +5,7 @@ Module to manage personal expenses
 """
 class Expense:
     """
-    Represents a single 
+    Represents a single expense
     """
     def __init__(self, description: str, amount: float, date: str = None):
         """
@@ -26,7 +26,10 @@ class Expense:
         self._amount = 0
         self.amount = amount
         self.description = description
-        self.date = date or datetime.now().strftime("%Y-%m-%d")
+        if not date:
+            self.date = datetime.now().strftime("%Y-%m-%d")
+        else:
+            self.date = date
         
     
     

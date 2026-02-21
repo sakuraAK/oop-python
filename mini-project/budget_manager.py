@@ -11,6 +11,15 @@ class BudgetManager:
 
 
     def add_category(self, name: str) -> bool:
+        """
+        Add new category
+        
+        :param self: Description
+        :param name: Name of the expense catgory
+        :type name: str
+        :return: True if catgory added successfully. False - if exists
+        :rtype: bool
+        """
         if name in self._categories:
             return False
         self._categories[name] = Category(name)
@@ -38,6 +47,26 @@ class BudgetManager:
         self._categories[category_name].add_expense(expense)
         return True
     
+    def add_expense(self, category_name: str, description: str, amount: float, date: str=None) -> bool:
+        if not category_name in self._categories:
+            return False
+    
+        expense = Expense(description, amount, date)
+        self._categories[category_name].add_expense(expense)
+        return True
+    
+    def get_expenses_by_category(self, name: str) -> str:
+        category = self.get_category(name)
+        return category.list_expenses()
+    
+    def remove_expense(self, name: str, expense_id: int) -> bool:
+        if not self.category_exists(name):
+            print(f"Category {name} does not exist")
+            return False
+        
+        category = self.get_category(name)
+        
+        return category.remove_expense(expense_id - 1)
     
     def list_categories(self) -> List[str]:
         return list(self._categories.keys())

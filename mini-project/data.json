@@ -1,0 +1,14 @@
+{
+  "categories": {
+    "Food": {
+      "name": "Food",
+      "expenses": [
+        {
+          "description": "Dinner",
+          "amount": 50.0,
+          "date": "2026-01-02"
+        }
+      ]
+    }
+  }
+}
